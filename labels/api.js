@@ -1,12 +1,11 @@
 const axios = require("axios")
 const config = require("npm-conf")();
 
-const apiPath = "/api/v4/projects/"
+const apiPath = "/api/v4/"
 
 const getEntryPoint = (name, repository, basePath = apiPath) => {
   const base = getHost() + basePath
-  const encodedRepository = encodeURIComponent(repository)
-  return `${base + encodedRepository}/${name}`
+  return `${base + repository}/${name}`
 }
 
 const setHost = host => {
